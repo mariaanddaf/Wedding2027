@@ -73,6 +73,14 @@ a {
   margin-bottom: 3rem;
 }
 
+.section-subtitle {
+  display: block;
+  margin-top: .8rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 /* Language pairs: hidden until js/script.js reveals the active one */
 [data-lang] {
   display: none;
@@ -622,6 +630,14 @@ a {
     font-size: 1.2rem;
   }
 
+  .hero__date .date-sep {
+    display: none;
+  }
+
+  .hero__date .date-place {
+    display: block;
+  }
+
   .countdown {
     width: 100%;
     gap: .5rem;
@@ -663,12 +679,7 @@ a {
 
   /* Names wrap onto two lines so they sit between the daffodils; a soft
      seashell glow keeps any text that meets the flowers readable. */
-  .hero__names {
-    max-width: 7.5ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  .hero__names .name-part,
   .language-select h2 .name-part {
     display: block;
   }

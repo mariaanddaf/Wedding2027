@@ -82,6 +82,7 @@ a {
 .language-select {
   position: fixed;
   inset: 0;
+  overflow: hidden;
   z-index: 50;
   background-color: var(--ivory);
   display: flex;
@@ -256,7 +257,7 @@ a {
 }
 
 .countdown__unit {
-  background-color: var(--chip);
+  background-color: #f6ece5;
   border: 1px solid var(--line);
   border-radius: .6rem;
   padding: .9rem 1.1rem;
@@ -287,22 +288,34 @@ a {
 }
 
 .hero > :not(.daffodil),
-.closing > :not(.daffodil) {
+.language-select > :not(.daffodil) {
   position: relative;
   z-index: 1;
 }
 
-.daffodil--br {
-  bottom: 0;
+/* Watercolour daffodils filling the full height of the language screen
+   and the opening screen, one each side; the outer edge tucks off-screen. */
+.side-daffodil {
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+
+.side-daffodil--left {
+  left: 0;
+  transform: translateX(-20%);
+}
+
+.side-daffodil--right {
   right: 0;
-  width: 13rem;
+  transform: translateX(20%) scaleX(-1);
 }
 
 .closing {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 5rem 0 16rem;
+  padding: 5rem 0 6rem;
   border-top: 1px solid var(--line);
 }
 
@@ -359,6 +372,11 @@ a {
 }
 
 .photo-card--sketch img {
+  object-fit: contain;
+}
+
+.photo-card img.img--whole,
+.modal__img.img--whole {
   object-fit: contain;
 }
 
@@ -460,25 +478,13 @@ a {
 /* ---------- RSVP ---------- */
 
 .rsvp-frame-wrapper iframe {
+  display: block;
   width: 100%;
-  min-height: 640px;
+  max-width: 44rem;
+  margin: 0 auto;
+  min-height: 1000px;
   border: none;
   border-radius: .6rem;
-}
-
-.rsvp-placeholder {
-  max-width: 40rem;
-  margin: 0 auto;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 2px dashed var(--taupe);
-  border-radius: .8rem;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 1.1rem;
 }
 
 .rsvp-note {
@@ -563,6 +569,16 @@ a {
 
 /* ---------- Responsive ---------- */
 
+@media only screen and (min-width: 769px) and (max-width: 1150px) {
+  .side-daffodil--left {
+    transform: translateX(-38%);
+  }
+
+  .side-daffodil--right {
+    transform: translateX(38%) scaleX(-1);
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .welcome-grid {
     grid-template-columns: 1fr;
@@ -570,6 +586,10 @@ a {
 
   .photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .rsvp-frame-wrapper iframe {
+    min-height: 1150px;
   }
 
   .faq-grid {
@@ -627,11 +647,15 @@ a {
     max-height: 90vh;
   }
 
-  .daffodil--br {
-    width: 6.5rem;
+  .side-daffodil--left {
+    transform: translateX(-78%);
+  }
+
+  .side-daffodil--right {
+    transform: translateX(78%) scaleX(-1);
   }
 
   .closing {
-    padding: 3.5rem 0 11rem;
+    padding: 3.5rem 0 4rem;
   }
 }

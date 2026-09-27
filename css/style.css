@@ -82,7 +82,11 @@ a {
 
 .language-select {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  height: 100lvh;
   overflow: hidden;
   z-index: 50;
   background-color: var(--ivory);
@@ -228,7 +232,7 @@ a {
 
 .hero {
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100lvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -659,11 +663,25 @@ a {
 
   /* Names wrap onto two lines so they sit between the daffodils; a soft
      seashell glow keeps any text that meets the flowers readable. */
-  .hero__names,
-  .language-select h2 {
+  .hero__names {
     max-width: 7.5ch;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .language-select h2 .name-part {
+    display: block;
+  }
+
+  .language-select h2 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+
+  .language-select__options {
+    flex-direction: column;
+    gap: 1.6rem;
   }
 
   .hero__names,

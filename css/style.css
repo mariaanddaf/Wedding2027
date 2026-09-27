@@ -23,6 +23,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--ivory);
 }
 
 body {
@@ -135,8 +136,8 @@ a {
 
 .menu-button {
   position: fixed;
-  top: 1.2rem;
-  right: 1.2rem;
+  top: calc(1.2rem + env(safe-area-inset-top));
+  right: calc(1.2rem + env(safe-area-inset-right));
   z-index: 30;
   width: 2.8rem;
   height: 2.8rem;
@@ -201,8 +202,8 @@ a {
 
 .back-to-top {
   position: fixed;
-  bottom: 1.2rem;
-  right: 1.2rem;
+  bottom: calc(1.2rem + env(safe-area-inset-bottom));
+  right: calc(1.2rem + env(safe-area-inset-right));
   z-index: 30;
   width: 2.8rem;
   height: 2.8rem;
@@ -227,6 +228,7 @@ a {
 
 .hero {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en" data-site-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="María & Dafydd's wedding, 4 December 2027, Madrid">
+  <title>María &amp; Dafydd</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <!-- Link previews (WhatsApp, iMessage, etc). The image URL must be absolute:
+       update it if the site ends up on a different address. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="María &amp; Dafydd">
+  <meta property="og:description" content="4 December 2027 · Madrid">
+  <meta property="og:image" content="https://mariaanddafydd.github.io/Wedding2027/images/share-preview.jpg">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="1000">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LANGUAGE SELECT — shown every time the page opens; visitors must
+       pick a flag to continue. Reopen anytime from the floating menu.
+       ============================================================ -->
+  <div id="language-select" class="language-select">
+    <h2>María &amp; Dafydd</h2>
+    <div class="language-select__options">
+      <button type="button" class="language-flag" data-set-lang="es">
+        <svg viewBox="0 0 60 30" width="72" aria-hidden="true"><rect width="60" height="30" fill="#AA151B"/><rect y="7.5" width="60" height="15" fill="#F1BF00"/></svg>
+        <span>Español</span>
+      </button>
+      <button type="button" class="language-flag" data-set-lang="en">
+        <svg viewBox="0 0 60 30" width="72" aria-hidden="true">
+          <rect width="60" height="30" fill="#012169"/>
+          <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+          <path d="M0,0 L24,14 M60,0 L36,14 M0,30 L24,16 M60,30 L36,16" stroke="#C8102E" stroke-width="4"/>
+          <rect x="25" width="10" height="30" fill="#fff"/>
+          <rect y="10" width="60" height="10" fill="#fff"/>
+          <rect x="27" width="6" height="30" fill="#C8102E"/>
+          <rect y="12" width="60" height="6" fill="#C8102E"/>
+        </svg>
+        <span>English</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Floating nav menu -->
+  <div id="menu-button" class="menu-button">
+    <div id="menu-icon" class="menu-button__icon">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="menu-list">
+      <a href="#welcome" data-lang="en">Home</a>
+      <a href="#welcome" data-lang="es">Inicio</a>
+      <a href="#rsvp" data-lang="en">RSVP</a>
+      <a href="#rsvp" data-lang="es">Confirmar Asistencia</a>
+      <a href="#info" data-lang="en">Details</a>
+      <a href="#info" data-lang="es">Detalles</a>
+      <a href="#faq" data-lang="en">FAQs</a>
+      <a href="#faq" data-lang="es">Preguntas Frecuentes</a>
+      <a href="#gifts" data-lang="en">Gifts</a>
+      <a href="#gifts" data-lang="es">Regalos</a>
+      <a href="#" id="open-language-select">Language / Idioma</a>
+    </nav>
+  </div>
+
+  <a href="#top" class="back-to-top" aria-label="Back to top">&uarr;</a>
+
+  <!-- ============================================================
+       HERO
+       EDIT: names, date text. If you change the date, also update
+       WEDDING_DATETIME at the top of js/script.js to match.
+       ============================================================ -->
+  <header id="top" class="hero">
+    <h1 class="hero__names">María &amp; Dafydd</h1>
+    <div class="hero__date">
+      <span data-lang="en">4th December 2027 · Madrid</span>
+      <span data-lang="es">4 de diciembre de 2027 · Madrid</span>
+    </div>
+
+    <div class="countdown">
+      <div class="countdown__unit">
+        <div class="countdown__value" id="cd-days">–</div>
+        <div class="countdown__label"><span data-lang="en">Days</span><span data-lang="es">Días</span></div>
+      </div>
+      <div class="countdown__unit">
+        <div class="countdown__value" id="cd-hours">–</div>
+        <div class="countdown__label"><span data-lang="en">Hours</span><span data-lang="es">Horas</span></div>
+      </div>
+      <div class="countdown__unit">
+        <div class="countdown__value" id="cd-minutes">–</div>
+        <div class="countdown__label"><span data-lang="en">Minutes</span><span data-lang="es">Minutos</span></div>
+      </div>
+      <div class="countdown__unit">
+        <div class="countdown__value" id="cd-seconds">–</div>
+        <div class="countdown__label"><span data-lang="en">Seconds</span><span data-lang="es">Segundos</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       WELCOME
+       Photo: images/mariaanddafydd.jpg
+       ============================================================ -->
+  <section id="welcome" class="section">
+    <div class="container">
+      <h2 class="section-title"><span data-lang="en">Welcome!</span><span data-lang="es">¡Bienvenidos!</span></h2>
+      <div class="welcome-grid">
+        <img src="images/mariaanddafydd.jpg" alt="María and Dafydd">
+
+        <div>
+          <div class="welcome-detail">
+            <h3><span data-lang="en">Ceremony</span><span data-lang="es">Ceremonia</span></h3>
+            <div>Iglesia de la Concepción Real de Calatrava (Las Calatravas)</div>
+            <div>Calle de Alcalá, 25, 28014 Madrid</div>
+            <div><span data-lang="en">Begins at <b>12:30</b></span><span data-lang="es">Comienza a las <b>12:30</b></span></div>
+          </div>
+          <div class="welcome-detail">
+            <h3><span data-lang="en">Reception</span><span data-lang="es">Recepción</span></h3>
+            <div>Casino de Madrid</div>
+            <div>Calle de Alcalá, 15, 28014 Madrid</div>
+            <div><span data-lang="en">Reception to follow</span><span data-lang="es">La recepción comenzará a continuación</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RSVP
+       EDIT: replace the placeholder below with your own Google Form
+       embed link. See README.md for the exact field setup (full
+       name + food allergies required, address optional, with a
+       conditional follow-up text box when allergies = Yes).
+       ============================================================ -->
+  <section id="rsvp" class="section">
+    <div class="container">
+      <h2 class="section-title"><span data-lang="en">RSVP</span><span data-lang="es">Confirmar Asistencia</span></h2>
+
+      <!-- RSVP PLACEHOLDER — delete this div once you paste your Google Form
+           iframe below (see README.md for the exact steps). -->
+      <div class="rsvp-placeholder">
+        Google Form goes here. See README.md for setup steps.
+      </div>
+
+      <!-- EDIT: uncomment this once you have your Google Form embed link,
+           and delete the placeholder div above.
+      <div class="rsvp-frame-wrapper">
+        <iframe
+          title="RSVP form"
+          src="PASTE_YOUR_GOOGLE_FORM_EMBED_URL_HERE"
+          loading="lazy">
+        </iframe>
+      </div>
+      -->
+
+      <p class="rsvp-note"><span data-lang="en">Please respond by <em>[EDIT: RSVP deadline]</em>.</span><span data-lang="es">Por favor, confirmad antes del <em>[EDITAR: fecha límite]</em>.</span></p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GENERAL INFORMATION — cards opening detail modals
+       Images: swap any src for your own artwork (e.g. ink sketches).
+       ============================================================ -->
+  <section id="info" class="section">
+    <div class="container">
+      <h2 class="section-title"><span data-lang="en">General Information</span><span data-lang="es">Información General</span></h2>
+      <div class="photo-grid">
+
+        <div class="photo-card" data-open-modal="modal-ceremony">
+          <img src="images/iglesia-de-las-calatravas.jpg" alt="Iglesia de las Calatravas">
+          <div class="photo-card__label">
+            <div>
+              <div class="photo-card__title"><span data-lang="en">Ceremony</span><span data-lang="es">Ceremonia</span></div>
+              <div class="photo-card__caption">Las Calatravas · 12:30</div>
+            </div>
+            <div class="photo-card__button"><span data-lang="en">See details</span><span data-lang="es">Ver más</span></div>
+          </div>
+        </div>
+
+        <div class="photo-card" data-open-modal="modal-reception">
+          <img src="images/elcasino.jpeg" alt="Casino de Madrid">
+          <div class="photo-card__label">
+            <div>
+              <div class="photo-card__title"><span data-lang="en">Reception</span><span data-lang="es">Recepción</span></div>
+              <div class="photo-card__caption">Casino de Madrid</div>
+            </div>
+            <div class="photo-card__button"><span data-lang="en">See details</span><span data-lang="es">Ver más</span></div>
+          </div>
+        </div>
+
+        <div class="photo-card" data-open-modal="modal-travel">
+          <img src="images/madrid_alojamientos.jpeg" alt="Madrid">
+          <div class="photo-card__label">
+            <div>
+              <div class="photo-card__title"><span data-lang="en">Travel &amp; Hotels</span><span data-lang="es">Viaje y Alojamiento</span></div>
+              <div class="photo-card__caption"><span data-lang="en">Getting to Madrid</span><span data-lang="es">Cómo llegar a Madrid</span></div>
+            </div>
+            <div class="photo-card__button"><span data-lang="en">See details</span><span data-lang="es">Ver más</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+       Cards are per language: data-lang="en" shows only in English,
+       data-lang="es" only in Spanish. Arrival time, dress code and
+       plus-ones are English-only on purpose.
+       ============================================================ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section-title"><span data-lang="en">FAQs</span><span data-lang="es">Preguntas Frecuentes</span></h2>
+      <div class="faq-grid">
+
+        <div class="faq-card" data-lang="en">
+          <h4>What time should I arrive at the church?</h4>
+          <p>The ceremony starts promptly at 12:30. We strongly recommend arriving 30 minutes beforehand, so that everyone can find their seat without rushing. The church doors will open at 12:00 and will close at the start of the ceremony to avoid interruptions.</p>
+        </div>
+
+        <div class="faq-card" data-lang="en">
+          <h4>What is the dress code?</h4>
+          <p>Formal. Please see full details below.</p>
+          <button class="btn" data-open-modal="modal-dress">See details</button>
+        </div>
+
+        <div class="faq-card" data-lang="en">
+          <h4>Can I bring a guest?</h4>
+          <p>We're only able to accommodate guests named on your invitation, so please check your invitation for any plus-one.</p>
+        </div>
+
+        <div class="faq-card" data-lang="en">
+          <h4>Will the reception be indoors?</h4>
+          <p>Yes, the reception at Casino de Madrid will be entirely indoors, and a cloakroom will be available for coats and bags.</p>
+        </div>
+        <div class="faq-card" data-lang="es">
+          <h4>¿La recepción será en interior?</h4>
+          <p>Sí, la recepción en el Casino de Madrid será completamente en interior, y habrá guardarropa disponible para abrigos y bolsos.</p>
+        </div>
+
+        <div class="faq-card" data-lang="en">
+          <h4>Is transportation provided?</h4>
+          <p>We won't be providing transport, but both venues are very central and easy to reach by public transport. The Sevilla metro stop (Line 2) sits right alongside the church, and Casino de Madrid is just a short walk from there.</p>
+        </div>
+        <div class="faq-card" data-lang="es">
+          <h4>¿Habrá transporte?</h4>
+          <p>No habrá transporte organizado, pero ambos lugares son muy céntricos y de fácil acceso en transporte público. La parada de Sevilla (Línea 2) está justo al lado de la iglesia, y el Casino de Madrid está a un breve paseo.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GIFTS
+       No registry, bank details only: the English version shows the
+       GBP account, the Spanish version shows the EUR account.
+       EDIT: fill in real account details before publishing.
+       ============================================================ -->
+  <section id="gifts" class="section">
+    <div class="container centered-copy">
+      <h2 class="section-title"><span data-lang="en">Gifts</span><span data-lang="es">Regalos</span></h2>
+      <p data-lang="en">The best wedding gift you can give us is coming to celebrate our love with us. If you'd like to help us start our new life together, here are our details:</p>
+      <p data-lang="es">El mejor regalo de boda que nos podéis hacer es venir a celebrar nuestro amor con nosotros. Si queréis ayudarnos a empezar nuestra nueva vida juntos, aquí tenéis nuestros datos:</p>
+
+      <div class="bank-details">
+        <div class="bank-card" data-lang="en">
+          <div>Account name: <em>[EDIT: account holder name]</em></div>
+          <div>Sort code: <em>[EDIT]</em></div>
+          <div>Account number: <em>[EDIT]</em></div>
+          <div>IBAN (optional): <em>[EDIT]</em></div>
+        </div>
+        <div class="bank-card" data-lang="es">
+          <div>Titular: <em>[EDITAR: nombre del titular]</em></div>
+          <div>IBAN: <em>[EDITAR]</em></div>
+          <div>BIC/SWIFT: <em>[EDITAR]</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <img class="daffodil daffodil--br" src="images/daffodil-br.png" alt="" aria-hidden="true">
+    <div class="container">
+      <h2><span data-lang="en">We can't wait to celebrate with you!</span><span data-lang="es">¡Estamos deseando celebrarlo con vosotros!</span></h2>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MODALS
+       ============================================================ -->
+
+  <div id="modal-ceremony" class="modal">
+    <div class="modal__body">
+      <div class="modal__close" data-close-modal>&times;</div>
+      <h3><span data-lang="en">Ceremony Details</span><span data-lang="es">Detalles de la Ceremonia</span></h3>
+      <img class="modal__img" src="images/iglesia-de-las-calatravas.jpg" alt="Iglesia de las Calatravas">
+      <p>
+        Iglesia de la Concepción Real de Calatrava (Las Calatravas)<br>
+        Calle de Alcalá, 25, 28014 Madrid<br><br>
+        <span data-lang="en">Begins at <b>12:30</b>. Doors open at <b>12:00</b> and close at the start of the ceremony.</span>
+        <span data-lang="es">Comienza a las <b>12:30</b>. Las puertas abren a las <b>12:00</b> y se cierran al empezar la ceremonia.</span>
+      </p>
+      <iframe class="modal__map" loading="lazy"
+        src="https://www.google.com/maps?q=Iglesia+de+las+Calatravas,+Calle+de+Alcal%C3%A1+25,+28014+Madrid&output=embed">
+      </iframe>
+    </div>
+  </div>
+
+  <div id="modal-reception" class="modal">
+    <div class="modal__body">
+      <div class="modal__close" data-close-modal>&times;</div>
+      <h3><span data-lang="en">Reception Details</span><span data-lang="es">Detalles de la Recepción</span></h3>
+      <img class="modal__img" src="images/elcasino.jpeg" alt="Casino de Madrid">
+      <p>
+        Casino de Madrid<br>
+        Calle de Alcalá, 15, 28014 Madrid<br><br>
+        <span data-lang="en">Reception to follow the ceremony, entirely indoors, with a cloakroom available. The reception ends at <b>23:00</b>, and the party will carry on at a nearby club. More details to come.</span>
+        <span data-lang="es">La recepción comenzará a continuación de la ceremonia, será en interior, y habrá guardarropa disponible. La recepción termina a las <b>23:00</b> y la fiesta continuará en una discoteca cercana. Más detalles próximamente.</span>
+      </p>
+      <iframe class="modal__map" loading="lazy"
+        src="https://www.google.com/maps?q=Casino+de+Madrid,+Calle+de+Alcal%C3%A1+15,+28014+Madrid&output=embed">
+      </iframe>
+    </div>
+  </div>
+
+  <div id="modal-travel" class="modal">
+    <div class="modal__body">
+      <div class="modal__close" data-close-modal>&times;</div>
+      <h3><span data-lang="en">Travel &amp; Hotels</span><span data-lang="es">Viaje y Alojamiento</span></h3>
+      <p data-lang="en">We won't be arranging transport or accommodation, but everything is centrally located and easy to reach by metro or bus. The Sevilla stop (Line 2) sits right alongside the church. If you're travelling from abroad, Madrid's airport is Adolfo Suárez Madrid–Barajas (MAD).</p>
+      <p data-lang="es">No organizaremos transporte ni alojamiento, pero todo está muy céntrico y es fácil de alcanzar en metro o autobús. La parada de Sevilla (Línea 2) está justo al lado de la iglesia. Si venís desde el extranjero, el aeropuerto de Madrid es Adolfo Suárez Madrid–Barajas (MAD).</p>
+      <p data-lang="en"><b>Good to know:</b> our wedding weekend falls on a long holiday weekend in Spain: Monday 6th December (Día de la Constitución) and Wednesday 8th December (La Inmaculada) are both national public holidays. We'd really recommend booking your flights and accommodation well in advance, as prices tend to spike over this popular travel period.</p>
+      <p data-lang="es"><b>Un aviso:</b> nuestro fin de semana de boda coincide con un puente en España: el lunes 6 de diciembre (Día de la Constitución) y el miércoles 8 de diciembre (La Inmaculada) son ambos festivos nacionales. Os recomendamos reservar vuelos y alojamiento con bastante antelación, ya que los precios suelen subir en estas fechas.</p>
+      <p data-lang="en">There are plenty of hotels and Airbnbs throughout the city to suit every budget and location. Here are a few of our own recommendations:</p>
+      <p data-lang="es">Hay muchos hoteles y Airbnbs por toda la ciudad para todos los presupuestos y zonas. Aquí tenéis algunas recomendaciones nuestras:</p>
+      <ul>
+        <li><em>[EDIT: Hotel name]: [link]</em></li>
+        <li><em>[EDIT: Hotel name]: [link]</em></li>
+        <li><em>[EDIT: Hotel name]: [link]</em></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modal-dress" class="modal">
+    <div class="modal__body">
+      <div class="modal__close" data-close-modal>&times;</div>
+      <h3><span data-lang="en">Dress Code</span><span data-lang="es">Código de Vestimenta</span></h3>
+      <p data-lang="en">
+        Spain has quite strict wedding etiquette regarding attire, so please do your best to follow it, as it's a cultural practice we'd love for you to be part of. This is a religious ceremony, so please dress accordingly.
+        <br><br>
+        <b>Ladies:</b> a long dress with appropriate coverage for the church.<br>
+        <b>Men:</b> a suit or kilt, tie, and dress shoes are mandatory.
+        <br><br>
+        <b>Weather:</b> Madrid in December is chilly, with daytime temperatures around 4–12°C. Most of the day will be spent indoors, but we recommend bringing a coat.
+      </p>
+      <p data-lang="es">
+        España tiene una etiqueta de boda bastante estricta respecto a la vestimenta, así que os pedimos que la sigáis lo mejor posible, ya que es una práctica cultural de la que nos encantaría que formarais parte. Al tratarse de una ceremonia religiosa, os pedimos vestir acorde a ella.
+        <br><br>
+        <b>Señoras:</b> vestido largo y con cobertura adecuada para la iglesia.<br>
+        <b>Caballeros:</b> traje, corbata y zapatos de vestir son obligatorios.
+        <br><br>
+        <b>Clima:</b> Madrid en diciembre es frío, con temperaturas diurnas de entre 4 y 12°C. La mayor parte del día será en interior, pero recomendamos traer un abrigo.
+      </p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

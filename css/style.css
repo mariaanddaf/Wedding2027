@@ -650,11 +650,27 @@ a {
   }
 
   .side-daffodil--left {
-    transform: translateX(-78%);
+    transform: translateX(-60%);
   }
 
   .side-daffodil--right {
-    transform: translateX(78%) scaleX(-1);
+    transform: translateX(60%) scaleX(-1);
+  }
+
+  /* Names wrap onto two lines so they sit between the daffodils; a soft
+     seashell glow keeps any text that meets the flowers readable. */
+  .hero__names,
+  .language-select h2 {
+    max-width: 7.5ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__names,
+  .hero__date,
+  .language-select h2,
+  .language-flag span {
+    text-shadow: 0 0 6px var(--ivory), 0 0 12px var(--ivory), 0 0 18px var(--ivory);
   }
 
   .closing {

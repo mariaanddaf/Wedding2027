@@ -501,6 +501,12 @@ a {
   border-radius: .6rem;
 }
 
+.rsvp-deadline {
+  text-align: center;
+  margin: -1.5rem 0 2rem;
+  font-size: 1.15rem;
+}
+
 .rsvp-note {
   text-align: center;
   margin-top: 1.5rem;
